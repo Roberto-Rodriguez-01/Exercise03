@@ -11,9 +11,7 @@ public class Exercise03 {
     public static void main(String[] args) {
 
 
-        if(gameState == 0){
-            fileCreate();
-        }
+ 
 
         Scanner cin = new Scanner(System.in);
 
@@ -36,7 +34,7 @@ public class Exercise03 {
     }
 
     public static void fileChecker(){
-        
+
     }
 
     public static void fileCreate() {
@@ -51,10 +49,6 @@ public class Exercise03 {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-    }
-
-    public static void readAndWriteFile(){
-
     }
 
     static String numberToName(int n) {
