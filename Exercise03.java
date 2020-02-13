@@ -1,7 +1,10 @@
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 public class Exercise03 {
 
@@ -98,7 +101,7 @@ public class Exercise03 {
             }
             userScore = Integer.parseInt(storage[0]);
             computerScore = Integer.parseInt(storage[1]);
-            System.out.printf("In your game the score was :%d and the Computers score was:%d \n", userScore, computerScore);
+            System.out.printf("In your Previous game the score was :%d and the Computers score was:%d \n", userScore, computerScore);
             System.out.println();
         } catch (IOException e) {
             System.out.println("An error occurred.");
@@ -109,7 +112,7 @@ public class Exercise03 {
     public static int computer() {
         //this picks a random number between 0 - 5
         Random random = new Random();
-        return (random.nextInt(-6));
+        return (random.nextInt(6));
     }
 
     static String numberToName(int n) {
@@ -139,6 +142,7 @@ public class Exercise03 {
         }
 
         System.out.printf("Your score is :%d the Computers score is:%d \n", userScore, computerScore);
+        System.out.println();
     }
 
     public static void whoWins(int computerChoice, int userChoice) {
@@ -146,13 +150,13 @@ public class Exercise03 {
         String userToNum = numberToName(userChoice);
         String compToNum = numberToName(computerChoice);
 
-        //set winner to 
+        //set winner to
         int winner;
         if (userChoice == computerChoice) {
             System.out.printf("You both tied, you had: \"%s\" and the computer had: \"%s\" \n", userToNum, compToNum);
             //set winner to two so the score method knows it was a tie
             winner = 2;
-            
+
         } else if (userChoice == 0 && (computerChoice == 2 || computerChoice == 4)) {
             System.out.printf("You won, you had: \"%s\" and the computer had: \"%s\" \n", userToNum, compToNum);
             winner = 1;
